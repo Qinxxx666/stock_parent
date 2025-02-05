@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.qin.com.stock.dao.StockOuterMarketIndexInfoDao">
+
+    <resultMap type="org.qin.com.stock.entity.StockOuterMarketIndexInfo" id="StockOuterMarketIndexInfoMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="marketCode" column="market_code" jdbcType="VARCHAR"/>
+        <result property="marketName" column="market_name" jdbcType="VARCHAR"/>
+        <result property="curPoint" column="cur_point" jdbcType="NUMERIC"/>
+        <result property="updown" column="updown" jdbcType="NUMERIC"/>
+        <result property="rose" column="rose" jdbcType="NUMERIC"/>
+        <result property="curTime" column="cur_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="StockOuterMarketIndexInfoMap">
+        select
+id, market_code, market_name, cur_point, updown, rose, cur_time
+        from stock_outer_market_index_info
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="StockOuterMarketIndexInfoMap">
+        select
+id, market_code, market_name, cur_point, updown, rose, cur_time
+        from stock_outer_market_index_info
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="marketCode != null and marketCode != ''">
+                and market_code = #{marketCode}
+            </if>
+            <if test="marketName != null and marketName != ''">
+                and market_name = #{marketName}
+            </if>
+            <if test="curPoint != null">
+                and cur_point = #{curPoint}
+            </if>
+            <if test="updown != null">
+                and updown = #{updown}
+            </if>
+            <if test="rose != null">
+                and rose = #{rose}
+            </if>
+            <if test="curTime != null">
+                and cur_time = #{curTime}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from stock_outer_market_index_info
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="marketCode != null and marketCode != ''">
+                and market_code = #{marketCode}
+            </if>
+            <if test="marketName != null and marketName != ''">
+                and market_name = #{marketName}
+            </if>
+            <if test="curPoint != null">
+                and cur_point = #{curPoint}
+            </if>
+            <if test="updown != null">
+                and updown = #{updown}
+            </if>
+            <if test="rose != null">
+                and rose = #{rose}
+            </if>
+            <if test="curTime != null">
+                and cur_time = #{curTime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into stock_outer_market_index_info(market_code, market_name, cur_point, updown, rose, cur_time)
+        values (#{marketCode}, #{marketName}, #{curPoint}, #{updown}, #{rose}, #{curTime})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into stock_outer_market_index_info(market_code, market_name, cur_point, updown, rose, cur_time)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.marketCode}, #{entity.marketName}, #{entity.curPoint}, #{entity.updown}, #{entity.rose}, #{entity.curTime})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into stock_outer_market_index_info(market_code, market_name, cur_point, updown, rose, cur_time)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.marketCode}, #{entity.marketName}, #{entity.curPoint}, #{entity.updown}, #{entity.rose}, #{entity.curTime})
+        </foreach>
+        on duplicate key update
+market_code = values(market_code),
+market_name = values(market_name),
+cur_point = values(cur_point),
+updown = values(updown),
+rose = values(rose),
+cur_time = values(cur_time)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update stock_outer_market_index_info
+        <set>
+            <if test="marketCode != null and marketCode != ''">
+                market_code = #{marketCode},
+            </if>
+            <if test="marketName != null and marketName != ''">
+                market_name = #{marketName},
+            </if>
+            <if test="curPoint != null">
+                cur_point = #{curPoint},
+            </if>
+            <if test="updown != null">
+                updown = #{updown},
+            </if>
+            <if test="rose != null">
+                rose = #{rose},
+            </if>
+            <if test="curTime != null">
+                cur_time = #{curTime},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from stock_outer_market_index_info where id = #{id}
+    </delete>
+
+</mapper>
+

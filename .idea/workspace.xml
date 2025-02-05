@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c1f8e861-2aad-4deb-b78c-ca6de79d2e58" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/easyCodeTableSettingEncode.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/config/CommonConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/config/OpenApiConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/config/RedisCacheConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/config/StockInfoConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/controller/SysUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/StockBlockRtInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/StockBusinessService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/StockMarketIndexInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/StockOuterMarketIndexInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/StockRtInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/SysLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/SysPermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/SysRolePermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/SysRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/SysUserRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/SysUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/impl/StockBlockRtInfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/impl/StockBusinessServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/impl/StockMarketIndexInfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/impl/StockOuterMarketIndexInfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/impl/StockRtInfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/impl/SysLogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/impl/SysPermissionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/impl/SysRolePermissionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/impl/SysRoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/impl/SysUserRoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/impl/SysUserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/vo/req/LoginReqVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/vo/resp/LoginRespVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/main/resources/application-local.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/test/java/org/qin/com/stock/PasswordEncoderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_backend/src/test/java/org/qin/com/stock/RedisTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/constant/StockConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/dao/StockBlockRtInfoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/dao/StockBusinessDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/dao/StockMarketIndexInfoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/dao/StockOuterMarketIndexInfoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/dao/StockRtInfoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/dao/SysLogDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/dao/SysPermissionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/dao/SysRoleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/dao/SysRolePermissionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/dao/SysUserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/dao/SysUserRoleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/entity/StockBlockRtInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/entity/StockBusiness.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/entity/StockMarketIndexInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/entity/StockOuterMarketIndexInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/entity/StockRtInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/entity/SysLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/entity/SysPermission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/entity/SysRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/entity/SysRolePermission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/entity/SysUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/entity/SysUserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/utils/IdWorker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/utils/R.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/utils/ResponseCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/resources/mapper/StockBlockRtInfoDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/resources/mapper/StockBusinessDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/resources/mapper/StockMarketIndexInfoDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/resources/mapper/StockOuterMarketIndexInfoDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/resources/mapper/StockRtInfoDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/resources/mapper/SysLogDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/resources/mapper/SysPermissionDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/resources/mapper/SysRoleDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/resources/mapper/SysRolePermissionDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/resources/mapper/SysUserDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_common/src/main/resources/mapper/SysUserRoleDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_job/src/main/java/org/qin/com/stock/JobApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_job/src/main/java/org/qin/com/stock/config/CommonConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_job/src/main/java/org/qin/com/stock/config/HttpClientConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock_job/src/main/resources/application-job.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2sAe4iWDbRQLW2KsxN8JXzOc1G8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.RedisTest.test01.executor": "Run",
+    "JUnit.StockApplicationTests.pageQueryTest.executor": "Run",
+    "JUnit.StockJobApplicationTests.test06.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.StockApplication.executor": "Run",
+    "Spring Boot.Unnamed.executor": "Run",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ASUS/Documents/IDEA/stock_parent/stock_backend/src/main/java/org/qin/com/stock",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/ASUS/Documents/IDEA/stock_parent/src/main/java/org/qin/com/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reactor",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql_aurora_aws"
+    ]
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.qin.com.stock" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.StockJobApplicationTests.test06">
+    <configuration name="RedisTest.test01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stock_backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.qin.com.stock.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.qin.com.stock" />
+      <option name="MAIN_CLASS_NAME" value="org.qin.com.stock.RedisTest" />
+      <option name="METHOD_NAME" value="test01" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StockApplicationTests.pageQueryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stock_backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.qin.com.stock.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.qin.com.stock" />
+      <option name="MAIN_CLASS_NAME" value="org.qin.com.stock.StockApplicationTests" />
+      <option name="METHOD_NAME" value="pageQueryTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StockJobApplicationTests.test06" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stock_job" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.qin.com.stock.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.qin.com.stock" />
+      <option name="MAIN_CLASS_NAME" value="org.qin.com.stock.StockJobApplicationTests" />
+      <option name="METHOD_NAME" value="test06" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JobApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="stock_job" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.qin.com.stock.JobApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StockApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="stock_backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.qin.com.stock.StockApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.StockJobApplicationTests.test06" />
+      <item itemvalue="JUnit.StockApplicationTests.pageQueryTest" />
+      <item itemvalue="JUnit.RedisTest.test01" />
+      <item itemvalue="Spring Boot.StockApplication" />
+      <item itemvalue="Spring Boot.JobApp" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.StockJobApplicationTests.test06" />
+        <item itemvalue="JUnit.StockApplicationTests.pageQueryTest" />
+        <item itemvalue="JUnit.RedisTest.test01" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c1f8e861-2aad-4deb-b78c-ca6de79d2e58" name="Changes" comment="" />
+      <created>1737902617227</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1737902617227</updated>
+      <workItem from="1737902618224" duration="3010000" />
+      <workItem from="1737910687961" duration="8387000" />
+      <workItem from="1737961682640" duration="22723000" />
+      <workItem from="1738330709127" duration="3046000" />
+      <workItem from="1738669068551" duration="135000" />
+      <workItem from="1738669208884" duration="3792000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/qin/com/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

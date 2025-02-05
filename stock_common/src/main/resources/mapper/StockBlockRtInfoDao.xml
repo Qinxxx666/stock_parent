@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.qin.com.stock.dao.StockBlockRtInfoDao">
+
+    <resultMap type="org.qin.com.stock.entity.StockBlockRtInfo" id="StockBlockRtInfoMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="label" column="label" jdbcType="VARCHAR"/>
+        <result property="blockName" column="block_name" jdbcType="VARCHAR"/>
+        <result property="companyNum" column="company_num" jdbcType="INTEGER"/>
+        <result property="avgPrice" column="avg_price" jdbcType="NUMERIC"/>
+        <result property="updownRate" column="updown_rate" jdbcType="NUMERIC"/>
+        <result property="tradeAmount" column="trade_amount" jdbcType="INTEGER"/>
+        <result property="tradeVolume" column="trade_volume" jdbcType="NUMERIC"/>
+        <result property="curTime" column="cur_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="StockBlockRtInfoMap">
+        select
+id, label, block_name, company_num, avg_price, updown_rate, trade_amount, trade_volume, cur_time
+        from stock_block_rt_info
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="StockBlockRtInfoMap">
+        select
+id, label, block_name, company_num, avg_price, updown_rate, trade_amount, trade_volume, cur_time
+        from stock_block_rt_info
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="label != null and label != ''">
+                and label = #{label}
+            </if>
+            <if test="blockName != null and blockName != ''">
+                and block_name = #{blockName}
+            </if>
+            <if test="companyNum != null">
+                and company_num = #{companyNum}
+            </if>
+            <if test="avgPrice != null">
+                and avg_price = #{avgPrice}
+            </if>
+            <if test="updownRate != null">
+                and updown_rate = #{updownRate}
+            </if>
+            <if test="tradeAmount != null">
+                and trade_amount = #{tradeAmount}
+            </if>
+            <if test="tradeVolume != null">
+                and trade_volume = #{tradeVolume}
+            </if>
+            <if test="curTime != null">
+                and cur_time = #{curTime}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from stock_block_rt_info
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="label != null and label != ''">
+                and label = #{label}
+            </if>
+            <if test="blockName != null and blockName != ''">
+                and block_name = #{blockName}
+            </if>
+            <if test="companyNum != null">
+                and company_num = #{companyNum}
+            </if>
+            <if test="avgPrice != null">
+                and avg_price = #{avgPrice}
+            </if>
+            <if test="updownRate != null">
+                and updown_rate = #{updownRate}
+            </if>
+            <if test="tradeAmount != null">
+                and trade_amount = #{tradeAmount}
+            </if>
+            <if test="tradeVolume != null">
+                and trade_volume = #{tradeVolume}
+            </if>
+            <if test="curTime != null">
+                and cur_time = #{curTime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into stock_block_rt_info(label, block_name, company_num, avg_price, updown_rate, trade_amount, trade_volume, cur_time)
+        values (#{label}, #{blockName}, #{companyNum}, #{avgPrice}, #{updownRate}, #{tradeAmount}, #{tradeVolume}, #{curTime})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into stock_block_rt_info(label, block_name, company_num, avg_price, updown_rate, trade_amount, trade_volume, cur_time)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.label}, #{entity.blockName}, #{entity.companyNum}, #{entity.avgPrice}, #{entity.updownRate}, #{entity.tradeAmount}, #{entity.tradeVolume}, #{entity.curTime})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into stock_block_rt_info(label, block_name, company_num, avg_price, updown_rate, trade_amount, trade_volume, cur_time)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.label}, #{entity.blockName}, #{entity.companyNum}, #{entity.avgPrice}, #{entity.updownRate}, #{entity.tradeAmount}, #{entity.tradeVolume}, #{entity.curTime})
+        </foreach>
+        on duplicate key update
+label = values(label),
+block_name = values(block_name),
+company_num = values(company_num),
+avg_price = values(avg_price),
+updown_rate = values(updown_rate),
+trade_amount = values(trade_amount),
+trade_volume = values(trade_volume),
+cur_time = values(cur_time)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update stock_block_rt_info
+        <set>
+            <if test="label != null and label != ''">
+                label = #{label},
+            </if>
+            <if test="blockName != null and blockName != ''">
+                block_name = #{blockName},
+            </if>
+            <if test="companyNum != null">
+                company_num = #{companyNum},
+            </if>
+            <if test="avgPrice != null">
+                avg_price = #{avgPrice},
+            </if>
+            <if test="updownRate != null">
+                updown_rate = #{updownRate},
+            </if>
+            <if test="tradeAmount != null">
+                trade_amount = #{tradeAmount},
+            </if>
+            <if test="tradeVolume != null">
+                trade_volume = #{tradeVolume},
+            </if>
+            <if test="curTime != null">
+                cur_time = #{curTime},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from stock_block_rt_info where id = #{id}
+    </delete>
+
+</mapper>
+

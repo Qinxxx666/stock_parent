@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.qin.com.stock.dao.StockRtInfoDao">
+
+    <resultMap type="org.qin.com.stock.entity.StockRtInfo" id="StockRtInfoMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="stockCode" column="stock_code" jdbcType="VARCHAR"/>
+        <result property="stockName" column="stock_name" jdbcType="VARCHAR"/>
+        <result property="preClosePrice" column="pre_close_price" jdbcType="NUMERIC"/>
+        <result property="openPrice" column="open_price" jdbcType="NUMERIC"/>
+        <result property="curPrice" column="cur_price" jdbcType="NUMERIC"/>
+        <result property="minPrice" column="min_price" jdbcType="NUMERIC"/>
+        <result property="maxPrice" column="max_price" jdbcType="NUMERIC"/>
+        <result property="tradeAmount" column="trade_amount" jdbcType="INTEGER"/>
+        <result property="tradeVolume" column="trade_volume" jdbcType="NUMERIC"/>
+        <result property="curTime" column="cur_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="StockRtInfoMap">
+        select
+id, stock_code, stock_name, pre_close_price, open_price, cur_price, min_price, max_price, trade_amount, trade_volume, cur_time
+        from stock_rt_info
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="StockRtInfoMap">
+        select
+id, stock_code, stock_name, pre_close_price, open_price, cur_price, min_price, max_price, trade_amount, trade_volume, cur_time
+        from stock_rt_info
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="stockCode != null and stockCode != ''">
+                and stock_code = #{stockCode}
+            </if>
+            <if test="stockName != null and stockName != ''">
+                and stock_name = #{stockName}
+            </if>
+            <if test="preClosePrice != null">
+                and pre_close_price = #{preClosePrice}
+            </if>
+            <if test="openPrice != null">
+                and open_price = #{openPrice}
+            </if>
+            <if test="curPrice != null">
+                and cur_price = #{curPrice}
+            </if>
+            <if test="minPrice != null">
+                and min_price = #{minPrice}
+            </if>
+            <if test="maxPrice != null">
+                and max_price = #{maxPrice}
+            </if>
+            <if test="tradeAmount != null">
+                and trade_amount = #{tradeAmount}
+            </if>
+            <if test="tradeVolume != null">
+                and trade_volume = #{tradeVolume}
+            </if>
+            <if test="curTime != null">
+                and cur_time = #{curTime}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from stock_rt_info
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="stockCode != null and stockCode != ''">
+                and stock_code = #{stockCode}
+            </if>
+            <if test="stockName != null and stockName != ''">
+                and stock_name = #{stockName}
+            </if>
+            <if test="preClosePrice != null">
+                and pre_close_price = #{preClosePrice}
+            </if>
+            <if test="openPrice != null">
+                and open_price = #{openPrice}
+            </if>
+            <if test="curPrice != null">
+                and cur_price = #{curPrice}
+            </if>
+            <if test="minPrice != null">
+                and min_price = #{minPrice}
+            </if>
+            <if test="maxPrice != null">
+                and max_price = #{maxPrice}
+            </if>
+            <if test="tradeAmount != null">
+                and trade_amount = #{tradeAmount}
+            </if>
+            <if test="tradeVolume != null">
+                and trade_volume = #{tradeVolume}
+            </if>
+            <if test="curTime != null">
+                and cur_time = #{curTime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into stock_rt_info(stock_code, stock_name, pre_close_price, open_price, cur_price, min_price, max_price, trade_amount, trade_volume, cur_time)
+        values (#{stockCode}, #{stockName}, #{preClosePrice}, #{openPrice}, #{curPrice}, #{minPrice}, #{maxPrice}, #{tradeAmount}, #{tradeVolume}, #{curTime})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into stock_rt_info(stock_code, stock_name, pre_close_price, open_price, cur_price, min_price, max_price, trade_amount, trade_volume, cur_time)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.stockCode}, #{entity.stockName}, #{entity.preClosePrice}, #{entity.openPrice}, #{entity.curPrice}, #{entity.minPrice}, #{entity.maxPrice}, #{entity.tradeAmount}, #{entity.tradeVolume}, #{entity.curTime})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into stock_rt_info(stock_code, stock_name, pre_close_price, open_price, cur_price, min_price, max_price, trade_amount, trade_volume, cur_time)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.stockCode}, #{entity.stockName}, #{entity.preClosePrice}, #{entity.openPrice}, #{entity.curPrice}, #{entity.minPrice}, #{entity.maxPrice}, #{entity.tradeAmount}, #{entity.tradeVolume}, #{entity.curTime})
+        </foreach>
+        on duplicate key update
+stock_code = values(stock_code),
+stock_name = values(stock_name),
+pre_close_price = values(pre_close_price),
+open_price = values(open_price),
+cur_price = values(cur_price),
+min_price = values(min_price),
+max_price = values(max_price),
+trade_amount = values(trade_amount),
+trade_volume = values(trade_volume),
+cur_time = values(cur_time)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update stock_rt_info
+        <set>
+            <if test="stockCode != null and stockCode != ''">
+                stock_code = #{stockCode},
+            </if>
+            <if test="stockName != null and stockName != ''">
+                stock_name = #{stockName},
+            </if>
+            <if test="preClosePrice != null">
+                pre_close_price = #{preClosePrice},
+            </if>
+            <if test="openPrice != null">
+                open_price = #{openPrice},
+            </if>
+            <if test="curPrice != null">
+                cur_price = #{curPrice},
+            </if>
+            <if test="minPrice != null">
+                min_price = #{minPrice},
+            </if>
+            <if test="maxPrice != null">
+                max_price = #{maxPrice},
+            </if>
+            <if test="tradeAmount != null">
+                trade_amount = #{tradeAmount},
+            </if>
+            <if test="tradeVolume != null">
+                trade_volume = #{tradeVolume},
+            </if>
+            <if test="curTime != null">
+                cur_time = #{curTime},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from stock_rt_info where id = #{id}
+    </delete>
+
+</mapper>
+

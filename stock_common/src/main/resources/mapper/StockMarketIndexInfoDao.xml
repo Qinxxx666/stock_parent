@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.qin.com.stock.dao.StockMarketIndexInfoDao">
+
+    <resultMap type="org.qin.com.stock.entity.StockMarketIndexInfo" id="StockMarketIndexInfoMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="marketCode" column="market_code" jdbcType="VARCHAR"/>
+        <result property="marketName" column="market_name" jdbcType="VARCHAR"/>
+        <result property="preClosePoint" column="pre_close_point" jdbcType="NUMERIC"/>
+        <result property="openPoint" column="open_point" jdbcType="NUMERIC"/>
+        <result property="curPoint" column="cur_point" jdbcType="NUMERIC"/>
+        <result property="minPoint" column="min_point" jdbcType="NUMERIC"/>
+        <result property="maxPoint" column="max_point" jdbcType="NUMERIC"/>
+        <result property="tradeAmount" column="trade_amount" jdbcType="INTEGER"/>
+        <result property="tradeVolume" column="trade_volume" jdbcType="NUMERIC"/>
+        <result property="curTime" column="cur_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="StockMarketIndexInfoMap">
+        select
+id, market_code, market_name, pre_close_point, open_point, cur_point, min_point, max_point, trade_amount, trade_volume, cur_time
+        from stock_market_index_info
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="StockMarketIndexInfoMap">
+        select
+id, market_code, market_name, pre_close_point, open_point, cur_point, min_point, max_point, trade_amount, trade_volume, cur_time
+        from stock_market_index_info
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="marketCode != null and marketCode != ''">
+                and market_code = #{marketCode}
+            </if>
+            <if test="marketName != null and marketName != ''">
+                and market_name = #{marketName}
+            </if>
+            <if test="preClosePoint != null">
+                and pre_close_point = #{preClosePoint}
+            </if>
+            <if test="openPoint != null">
+                and open_point = #{openPoint}
+            </if>
+            <if test="curPoint != null">
+                and cur_point = #{curPoint}
+            </if>
+            <if test="minPoint != null">
+                and min_point = #{minPoint}
+            </if>
+            <if test="maxPoint != null">
+                and max_point = #{maxPoint}
+            </if>
+            <if test="tradeAmount != null">
+                and trade_amount = #{tradeAmount}
+            </if>
+            <if test="tradeVolume != null">
+                and trade_volume = #{tradeVolume}
+            </if>
+            <if test="curTime != null">
+                and cur_time = #{curTime}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from stock_market_index_info
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="marketCode != null and marketCode != ''">
+                and market_code = #{marketCode}
+            </if>
+            <if test="marketName != null and marketName != ''">
+                and market_name = #{marketName}
+            </if>
+            <if test="preClosePoint != null">
+                and pre_close_point = #{preClosePoint}
+            </if>
+            <if test="openPoint != null">
+                and open_point = #{openPoint}
+            </if>
+            <if test="curPoint != null">
+                and cur_point = #{curPoint}
+            </if>
+            <if test="minPoint != null">
+                and min_point = #{minPoint}
+            </if>
+            <if test="maxPoint != null">
+                and max_point = #{maxPoint}
+            </if>
+            <if test="tradeAmount != null">
+                and trade_amount = #{tradeAmount}
+            </if>
+            <if test="tradeVolume != null">
+                and trade_volume = #{tradeVolume}
+            </if>
+            <if test="curTime != null">
+                and cur_time = #{curTime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into stock_market_index_info(market_code, market_name, pre_close_point, open_point, cur_point, min_point, max_point, trade_amount, trade_volume, cur_time)
+        values (#{marketCode}, #{marketName}, #{preClosePoint}, #{openPoint}, #{curPoint}, #{minPoint}, #{maxPoint}, #{tradeAmount}, #{tradeVolume}, #{curTime})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into stock_market_index_info(market_code, market_name, pre_close_point, open_point, cur_point, min_point, max_point, trade_amount, trade_volume, cur_time)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.marketCode}, #{entity.marketName}, #{entity.preClosePoint}, #{entity.openPoint}, #{entity.curPoint}, #{entity.minPoint}, #{entity.maxPoint}, #{entity.tradeAmount}, #{entity.tradeVolume}, #{entity.curTime})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into stock_market_index_info(market_code, market_name, pre_close_point, open_point, cur_point, min_point, max_point, trade_amount, trade_volume, cur_time)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.marketCode}, #{entity.marketName}, #{entity.preClosePoint}, #{entity.openPoint}, #{entity.curPoint}, #{entity.minPoint}, #{entity.maxPoint}, #{entity.tradeAmount}, #{entity.tradeVolume}, #{entity.curTime})
+        </foreach>
+        on duplicate key update
+market_code = values(market_code),
+market_name = values(market_name),
+pre_close_point = values(pre_close_point),
+open_point = values(open_point),
+cur_point = values(cur_point),
+min_point = values(min_point),
+max_point = values(max_point),
+trade_amount = values(trade_amount),
+trade_volume = values(trade_volume),
+cur_time = values(cur_time)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update stock_market_index_info
+        <set>
+            <if test="marketCode != null and marketCode != ''">
+                market_code = #{marketCode},
+            </if>
+            <if test="marketName != null and marketName != ''">
+                market_name = #{marketName},
+            </if>
+            <if test="preClosePoint != null">
+                pre_close_point = #{preClosePoint},
+            </if>
+            <if test="openPoint != null">
+                open_point = #{openPoint},
+            </if>
+            <if test="curPoint != null">
+                cur_point = #{curPoint},
+            </if>
+            <if test="minPoint != null">
+                min_point = #{minPoint},
+            </if>
+            <if test="maxPoint != null">
+                max_point = #{maxPoint},
+            </if>
+            <if test="tradeAmount != null">
+                trade_amount = #{tradeAmount},
+            </if>
+            <if test="tradeVolume != null">
+                trade_volume = #{tradeVolume},
+            </if>
+            <if test="curTime != null">
+                cur_time = #{curTime},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from stock_market_index_info where id = #{id}
+    </delete>
+
+</mapper>
+

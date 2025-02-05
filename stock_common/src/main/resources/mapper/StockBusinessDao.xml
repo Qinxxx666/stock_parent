@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.qin.com.stock.dao.StockBusinessDao">
+
+    <resultMap type="org.qin.com.stock.entity.StockBusiness" id="StockBusinessMap">
+        <result property="stockCode" column="stock_code" jdbcType="VARCHAR"/>
+        <result property="stockName" column="stock_name" jdbcType="VARCHAR"/>
+        <result property="blockLabel" column="block_label" jdbcType="VARCHAR"/>
+        <result property="blockName" column="block_name" jdbcType="VARCHAR"/>
+        <result property="business" column="business" jdbcType="VARCHAR"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="StockBusinessMap">
+        select
+stock_code, stock_name, block_label, block_name, business, update_time
+        from stock_business
+        where stock_code = #{stockCode}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="StockBusinessMap">
+        select
+stock_code, stock_name, block_label, block_name, business, update_time
+        from stock_business
+        <where>
+            <if test="stockCode != null and stockCode != ''">
+                and stock_code = #{stockCode}
+            </if>
+            <if test="stockName != null and stockName != ''">
+                and stock_name = #{stockName}
+            </if>
+            <if test="blockLabel != null and blockLabel != ''">
+                and block_label = #{blockLabel}
+            </if>
+            <if test="blockName != null and blockName != ''">
+                and block_name = #{blockName}
+            </if>
+            <if test="business != null and business != ''">
+                and business = #{business}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from stock_business
+        <where>
+            <if test="stockCode != null and stockCode != ''">
+                and stock_code = #{stockCode}
+            </if>
+            <if test="stockName != null and stockName != ''">
+                and stock_name = #{stockName}
+            </if>
+            <if test="blockLabel != null and blockLabel != ''">
+                and block_label = #{blockLabel}
+            </if>
+            <if test="blockName != null and blockName != ''">
+                and block_name = #{blockName}
+            </if>
+            <if test="business != null and business != ''">
+                and business = #{business}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="stockCode" useGeneratedKeys="true">
+        insert into stock_business(stock_name, block_label, block_name, business, update_time)
+        values (#{stockName}, #{blockLabel}, #{blockName}, #{business}, #{updateTime})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="stockCode" useGeneratedKeys="true">
+        insert into stock_business(stock_name, block_label, block_name, business, update_time)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.stockName}, #{entity.blockLabel}, #{entity.blockName}, #{entity.business}, #{entity.updateTime})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="stockCode" useGeneratedKeys="true">
+        insert into stock_business(stock_name, block_label, block_name, business, update_time)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.stockName}, #{entity.blockLabel}, #{entity.blockName}, #{entity.business}, #{entity.updateTime})
+        </foreach>
+        on duplicate key update
+stock_name = values(stock_name),
+block_label = values(block_label),
+block_name = values(block_name),
+business = values(business),
+update_time = values(update_time)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update stock_business
+        <set>
+            <if test="stockName != null and stockName != ''">
+                stock_name = #{stockName},
+            </if>
+            <if test="blockLabel != null and blockLabel != ''">
+                block_label = #{blockLabel},
+            </if>
+            <if test="blockName != null and blockName != ''">
+                block_name = #{blockName},
+            </if>
+            <if test="business != null and business != ''">
+                business = #{business},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+        </set>
+        where stock_code = #{stockCode}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from stock_business where stock_code = #{stockCode}
+    </delete>
+
+</mapper>
+
