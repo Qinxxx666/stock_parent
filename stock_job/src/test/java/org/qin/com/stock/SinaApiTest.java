@@ -41,7 +41,10 @@ import java.util.regex.Pattern;
 @SpringBootTest
 public class SinaApiTest {
 
-    private RestTemplate restTemplate = new RestTemplate();
+    @Autowired
+    private RestTemplate restTemplate;
+    @Autowired
+    TimeUtil timeUtil;
     @Autowired
     StockMarketIndexInfoDao stockMarketIndexInfoDao;
     @Autowired

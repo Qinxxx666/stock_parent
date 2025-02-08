@@ -1,5 +1,6 @@
 package org.qin.com.stock;
 
+import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.qin.com.stock.entity.StockBlockRtInfo;
@@ -64,5 +65,16 @@ public class NormalTest {
 //            log.info(matcher.group(1));
 //            log.info(matcher.group(2));
 //        }
+    }
+    @Test
+    public void testPartion() {
+        List<Integer> all=new ArrayList<>();
+        for (int i = 1; i <= 50; i++) {
+            all.add(i);
+        }
+        //将集合均等分，每份大小最多15个
+        Lists.partition(all,15).forEach(ids->{
+            System.out.println(ids);
+        });
     }
 }
