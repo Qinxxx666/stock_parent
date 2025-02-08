@@ -1,6 +1,8 @@
 package org.qin.com.stock.config;
 
 import org.qin.com.stock.utils.IdWorker;
+import org.qin.com.stock.utils.ParserStockInfoUtil;
+import org.qin.com.stock.utils.TimeUtil;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -36,5 +38,21 @@ public class CommonConfig {
     public IdWorker idWorker(){
         //基于运维人员对机房和机器的编号规划自行约定
         return new IdWorker(1L, 2L);
+    }
+
+    //......
+    /**
+     * 配置解析工具bean
+     * @param idWorker
+     * @return
+     */
+    @Bean
+    public ParserStockInfoUtil parserStockInfoUtil(IdWorker idWorker){
+        return new ParserStockInfoUtil(idWorker);
+    }
+
+    @Bean
+    public TimeUtil timeUtil(){
+        return new TimeUtil();
     }
 }
