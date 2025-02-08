@@ -25,8 +25,6 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -187,6 +185,7 @@ public class SinaApiTest {
                     rose(new BigDecimal(splitArr[3])).
                     curTime(curTime).
                     build();
+
             infos.add(info);
         }
         if (!CollectionUtils.isEmpty(infos)) {

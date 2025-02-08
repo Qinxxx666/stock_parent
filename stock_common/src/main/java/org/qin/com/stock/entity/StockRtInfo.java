@@ -1,5 +1,8 @@
 package org.qin.com.stock.entity;
 
+import lombok.Builder;
+
+import java.math.BigDecimal;
 import java.util.Date;
 import java.io.Serializable;
 
@@ -9,6 +12,7 @@ import java.io.Serializable;
  * @author makejava
  * @since 2025-01-26 23:26:21
  */
+@Builder
 public class StockRtInfo implements Serializable {
     private static final long serialVersionUID = 403896015127065870L;
 /**
@@ -26,23 +30,23 @@ public class StockRtInfo implements Serializable {
 /**
      * 前收盘价| 昨日收盘价
      */
-    private Double preClosePrice;
+    private BigDecimal preClosePrice;
 /**
      * 开盘价
      */
-    private Double openPrice;
+    private BigDecimal openPrice;
 /**
      * 当前价格
      */
-    private Double curPrice;
+    private BigDecimal curPrice;
 /**
      * 今日最低价
      */
-    private Double minPrice;
+    private BigDecimal minPrice;
 /**
      * 今日最高价
      */
-    private Double maxPrice;
+    private BigDecimal maxPrice;
 /**
      * 成交量
      */
@@ -50,7 +54,7 @@ public class StockRtInfo implements Serializable {
 /**
      * 成交金额
      */
-    private Double tradeVolume;
+    private BigDecimal tradeVolume;
 /**
      * 当前时间
      */
@@ -81,43 +85,43 @@ public class StockRtInfo implements Serializable {
         this.stockName = stockName;
     }
 
-    public Double getPreClosePrice() {
+    public BigDecimal getPreClosePrice() {
         return preClosePrice;
     }
 
-    public void setPreClosePrice(Double preClosePrice) {
+    public void setPreClosePrice(BigDecimal preClosePrice) {
         this.preClosePrice = preClosePrice;
     }
 
-    public Double getOpenPrice() {
+    public BigDecimal getOpenPrice() {
         return openPrice;
     }
 
-    public void setOpenPrice(Double openPrice) {
+    public void setOpenPrice(BigDecimal openPrice) {
         this.openPrice = openPrice;
     }
 
-    public Double getCurPrice() {
+    public BigDecimal getCurPrice() {
         return curPrice;
     }
 
-    public void setCurPrice(Double curPrice) {
+    public void setCurPrice(BigDecimal curPrice) {
         this.curPrice = curPrice;
     }
 
-    public Double getMinPrice() {
+    public BigDecimal getMinPrice() {
         return minPrice;
     }
 
-    public void setMinPrice(Double minPrice) {
+    public void setMinPrice(BigDecimal minPrice) {
         this.minPrice = minPrice;
     }
 
-    public Double getMaxPrice() {
+    public BigDecimal getMaxPrice() {
         return maxPrice;
     }
 
-    public void setMaxPrice(Double maxPrice) {
+    public void setMaxPrice(BigDecimal maxPrice) {
         this.maxPrice = maxPrice;
     }
 
@@ -129,11 +133,11 @@ public class StockRtInfo implements Serializable {
         this.tradeAmount = tradeAmount;
     }
 
-    public Double getTradeVolume() {
+    public BigDecimal getTradeVolume() {
         return tradeVolume;
     }
 
-    public void setTradeVolume(Double tradeVolume) {
+    public void setTradeVolume(BigDecimal tradeVolume) {
         this.tradeVolume = tradeVolume;
     }
 
