@@ -1,7 +1,7 @@
 package org.qin.com.stock.service;
 
 import org.qin.com.stock.entity.SysUser;
-import org.qin.com.stock.utils.R;
+import org.qin.com.stock.utils.CommonResponse;
 import org.qin.com.stock.vo.req.LoginReqVo;
 import org.qin.com.stock.vo.resp.LoginRespVo;
 import org.springframework.data.domain.Page;
@@ -60,11 +60,11 @@ public interface SysUserService {
 
     SysUser queryByName(String name);
 
-    R<LoginRespVo> login(LoginReqVo vo);
+    CommonResponse<LoginRespVo> login(LoginReqVo vo);
 
     /**
      * 登录校验码生成服务方法
      * @return
      */
-    R<Map> getCaptchaCode();
+    CommonResponse<Map> getCaptchaCode();
 }
