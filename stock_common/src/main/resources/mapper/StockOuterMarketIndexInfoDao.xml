@@ -87,10 +87,10 @@ id, market_code, market_name, cur_point, updown, rose, cur_time
     </insert>
 
     <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into stock_outer_market_index_info(market_code, market_name, cur_point, updown, rose, cur_time)
+        insert into stock_outer_market_index_info(id,market_code, market_name, cur_point, updown, rose, cur_time)
         values
         <foreach collection="entities" item="entity" separator=",">
-        (#{entity.marketCode}, #{entity.marketName}, #{entity.curPoint}, #{entity.updown}, #{entity.rose}, #{entity.curTime})
+        (#{entity.id},#{entity.marketCode}, #{entity.marketName}, #{entity.curPoint}, #{entity.updown}, #{entity.rose}, #{entity.curTime})
         </foreach>
     </insert>
 

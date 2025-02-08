@@ -2,16 +2,17 @@ package org.qin.com.stock.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 /**
- * @author by itheima
- * @Date 2021/12/30
- * @Description
+ * @Title: StockInfoConfig
+ * @Author Qin
+ * @Package org.qin.com.stock.config
+ * @Version
+ * @Date 2025/2/7 14:13
+ * @description:
  */
-@Component
 @ConfigurationProperties(prefix = "stock")
 @Data
 public class StockInfoConfig {

@@ -7,6 +7,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+/**
+ * @Title: CommonConfig
+ * @Author Qin
+ * @Package org.qin.com.stock.config
+ * @Version
+ * @Date 2025/2/7 14:15
+ * @description:
+ */
 @EnableConfigurationProperties(StockInfoConfig.class)//开启常用参数配置bean
 @Configuration
 public class CommonConfig {

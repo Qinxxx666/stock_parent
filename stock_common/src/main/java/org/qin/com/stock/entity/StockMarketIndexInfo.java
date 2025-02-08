@@ -1,5 +1,9 @@
 package org.qin.com.stock.entity;
 
+import lombok.Builder;
+import lombok.Data;
+
+import java.math.BigDecimal;
 import java.util.Date;
 import java.io.Serializable;
 
@@ -9,6 +13,7 @@ import java.io.Serializable;
  * @author makejava
  * @since 2025-01-26 23:26:21
  */
+@Builder
 public class StockMarketIndexInfo implements Serializable {
     private static final long serialVersionUID = 370167967461924224L;
 /**
@@ -26,23 +31,23 @@ public class StockMarketIndexInfo implements Serializable {
 /**
      * 前收盘点数
      */
-    private Double preClosePoint;
+    private BigDecimal preClosePoint;
 /**
      * 开盘点数
      */
-    private Double openPoint;
+    private BigDecimal openPoint;
 /**
      * 当前点数
      */
-    private Double curPoint;
+    private BigDecimal curPoint;
 /**
      * 最低点数
      */
-    private Double minPoint;
+    private BigDecimal minPoint;
 /**
      * 最高点数
      */
-    private Double maxPoint;
+    private BigDecimal maxPoint;
 /**
      * 成交量(手)
      */
@@ -50,7 +55,7 @@ public class StockMarketIndexInfo implements Serializable {
 /**
      * 成交金额（元）
      */
-    private Double tradeVolume;
+    private BigDecimal tradeVolume;
 /**
      * 当前时间
      */
@@ -81,43 +86,43 @@ public class StockMarketIndexInfo implements Serializable {
         this.marketName = marketName;
     }
 
-    public Double getPreClosePoint() {
+    public BigDecimal getPreClosePoint() {
         return preClosePoint;
     }
 
-    public void setPreClosePoint(Double preClosePoint) {
+    public void setPreClosePoint(BigDecimal preClosePoint) {
         this.preClosePoint = preClosePoint;
     }
 
-    public Double getOpenPoint() {
+    public BigDecimal getOpenPoint() {
         return openPoint;
     }
 
-    public void setOpenPoint(Double openPoint) {
+    public void setOpenPoint(BigDecimal openPoint) {
         this.openPoint = openPoint;
     }
 
-    public Double getCurPoint() {
+    public BigDecimal getCurPoint() {
         return curPoint;
     }
 
-    public void setCurPoint(Double curPoint) {
+    public void setCurPoint(BigDecimal curPoint) {
         this.curPoint = curPoint;
     }
 
-    public Double getMinPoint() {
+    public BigDecimal getMinPoint() {
         return minPoint;
     }
 
-    public void setMinPoint(Double minPoint) {
+    public void setMinPoint(BigDecimal minPoint) {
         this.minPoint = minPoint;
     }
 
-    public Double getMaxPoint() {
+    public BigDecimal getMaxPoint() {
         return maxPoint;
     }
 
-    public void setMaxPoint(Double maxPoint) {
+    public void setMaxPoint(BigDecimal maxPoint) {
         this.maxPoint = maxPoint;
     }
 
@@ -129,11 +134,11 @@ public class StockMarketIndexInfo implements Serializable {
         this.tradeAmount = tradeAmount;
     }
 
-    public Double getTradeVolume() {
+    public BigDecimal getTradeVolume() {
         return tradeVolume;
     }
 
-    public void setTradeVolume(Double tradeVolume) {
+    public void setTradeVolume(BigDecimal tradeVolume) {
         this.tradeVolume = tradeVolume;
     }
 

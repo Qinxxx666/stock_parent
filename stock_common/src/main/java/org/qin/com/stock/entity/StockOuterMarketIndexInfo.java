@@ -1,5 +1,8 @@
 package org.qin.com.stock.entity;
 
+import lombok.Builder;
+
+import java.math.BigDecimal;
 import java.util.Date;
 import java.io.Serializable;
 
@@ -9,6 +12,7 @@ import java.io.Serializable;
  * @author makejava
  * @since 2025-01-26 23:26:21
  */
+@Builder
 public class StockOuterMarketIndexInfo implements Serializable {
     private static final long serialVersionUID = -41743017214611171L;
 /**
@@ -26,15 +30,15 @@ public class StockOuterMarketIndexInfo implements Serializable {
 /**
      * 大盘当前点
      */
-    private Double curPoint;
+    private BigDecimal curPoint;
 /**
      * 大盘涨跌值
      */
-    private Double updown;
+    private BigDecimal updown;
 /**
      * 大盘涨幅
      */
-    private Double rose;
+    private BigDecimal rose;
 /**
      * 当前时间
      */
@@ -65,27 +69,27 @@ public class StockOuterMarketIndexInfo implements Serializable {
         this.marketName = marketName;
     }
 
-    public Double getCurPoint() {
+    public BigDecimal getCurPoint() {
         return curPoint;
     }
 
-    public void setCurPoint(Double curPoint) {
+    public void setCurPoint(BigDecimal curPoint) {
         this.curPoint = curPoint;
     }
 
-    public Double getUpdown() {
+    public BigDecimal getUpdown() {
         return updown;
     }
 
-    public void setUpdown(Double updown) {
+    public void setUpdown(BigDecimal updown) {
         this.updown = updown;
     }
 
-    public Double getRose() {
+    public BigDecimal getRose() {
         return rose;
     }
 
-    public void setRose(Double rose) {
+    public void setRose(BigDecimal rose) {
         this.rose = rose;
     }
 

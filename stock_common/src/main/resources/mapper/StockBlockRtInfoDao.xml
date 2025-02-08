@@ -101,10 +101,10 @@ id, label, block_name, company_num, avg_price, updown_rate, trade_amount, trade_
     </insert>
 
     <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into stock_block_rt_info(label, block_name, company_num, avg_price, updown_rate, trade_amount, trade_volume, cur_time)
+        insert into stock_block_rt_info(id,label, block_name, company_num, avg_price, updown_rate, trade_amount, trade_volume, cur_time)
         values
         <foreach collection="entities" item="entity" separator=",">
-        (#{entity.label}, #{entity.blockName}, #{entity.companyNum}, #{entity.avgPrice}, #{entity.updownRate}, #{entity.tradeAmount}, #{entity.tradeVolume}, #{entity.curTime})
+        (#{entity.id},#{entity.label}, #{entity.blockName}, #{entity.companyNum}, #{entity.avgPrice}, #{entity.updownRate}, #{entity.tradeAmount}, #{entity.tradeVolume}, #{entity.curTime})
         </foreach>
     </insert>
 

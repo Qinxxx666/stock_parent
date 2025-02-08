@@ -1,5 +1,9 @@
 package org.qin.com.stock.entity;
 
+import lombok.Builder;
+import org.springframework.stereotype.Component;
+
+import java.math.BigDecimal;
 import java.util.Date;
 import java.io.Serializable;
 
@@ -9,6 +13,7 @@ import java.io.Serializable;
  * @author makejava
  * @since 2025-01-26 23:26:21
  */
+@Builder
 public class StockBlockRtInfo implements Serializable {
     private static final long serialVersionUID = 439006071654687496L;
 /**
@@ -30,11 +35,11 @@ public class StockBlockRtInfo implements Serializable {
 /**
      * 平均价格
      */
-    private Double avgPrice;
+    private BigDecimal avgPrice;
 /**
      * 涨跌幅
      */
-    private Double updownRate;
+    private BigDecimal updownRate;
 /**
      * 交易量
      */
@@ -42,7 +47,7 @@ public class StockBlockRtInfo implements Serializable {
 /**
      * 交易金额
      */
-    private Double tradeVolume;
+    private BigDecimal tradeVolume;
 /**
      * 当前日期（精确到秒）
      */
@@ -81,19 +86,19 @@ public class StockBlockRtInfo implements Serializable {
         this.companyNum = companyNum;
     }
 
-    public Double getAvgPrice() {
+    public BigDecimal getAvgPrice() {
         return avgPrice;
     }
 
-    public void setAvgPrice(Double avgPrice) {
+    public void setAvgPrice(BigDecimal avgPrice) {
         this.avgPrice = avgPrice;
     }
 
-    public Double getUpdownRate() {
+    public BigDecimal getUpdownRate() {
         return updownRate;
     }
 
-    public void setUpdownRate(Double updownRate) {
+    public void setUpdownRate(BigDecimal updownRate) {
         this.updownRate = updownRate;
     }
 
@@ -105,11 +110,11 @@ public class StockBlockRtInfo implements Serializable {
         this.tradeAmount = tradeAmount;
     }
 
-    public Double getTradeVolume() {
+    public BigDecimal getTradeVolume() {
         return tradeVolume;
     }
 
-    public void setTradeVolume(Double tradeVolume) {
+    public void setTradeVolume(BigDecimal tradeVolume) {
         this.tradeVolume = tradeVolume;
     }
 
