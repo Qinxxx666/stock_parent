@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1f8e861-2aad-4deb-b78c-ca6de79d2e58" name="Changes" comment="正则处理数据部分代码解耦到单独的工具类中">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bbfe1e35-2c1a-4dea-a393-b1a48d5a43d9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bbfe1e35-2c1a-4dea-a393-b1a48d5a43d9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/controller/SysUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/SysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/SysUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock_backend/src/main/java/org/qin/com/stock/service/impl/SysUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/config/CommonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/config/CommonConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/dao/StockBusinessDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/dao/StockBusinessDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/entity/StockBlockRtInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/entity/StockBlockRtInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/entity/StockRtInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/entity/StockRtInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/utils/ParserStockInfoUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/utils/ParserStockInfoUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/utils/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/utils/CommonResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/utils/TimeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock_common/src/main/java/org/qin/com/stock/utils/TimeUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_common/src/main/resources/mapper/StockBusinessDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/stock_common/src/main/resources/mapper/StockBusinessDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_job/src/main/java/org/qin/com/stock/service/impl/StockTimerTaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock_job/src/main/java/org/qin/com/stock/service/impl/StockTimerTaskServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_job/src/main/resources/application-job.yml" beforeDir="false" afterPath="$PROJECT_DIR$/stock_job/src/main/resources/application-job.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_job/src/test/java/org/qin/com/stock/NormalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock_job/src/test/java/org/qin/com/stock/NormalTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_job/src/test/java/org/qin/com/stock/SinaApiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock_job/src/test/java/org/qin/com/stock/SinaApiTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="c1f8e861-2aad-4deb-b78c-ca6de79d2e58" name="Changes" comment="查询全部股票的code" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -233,6 +212,7 @@
       <workItem from="1738669208884" duration="3792000" />
       <workItem from="1739009181677" duration="684000" />
       <workItem from="1739009877856" duration="2898000" />
+      <workItem from="1739032815583" duration="787000" />
     </task>
     <task id="LOCAL-00001" summary="项目初始化">
       <option name="closed" value="true" />
@@ -250,7 +230,79 @@
       <option name="project" value="LOCAL" />
       <updated>1739001965809</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="更新gitignore文件">
+      <option name="closed" value="true" />
+      <created>1739033302581</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739033302581</updated>
+    </task>
+    <task id="LOCAL-00004" summary="更新stock_job配置">
+      <option name="closed" value="true" />
+      <created>1739033327300</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739033327300</updated>
+    </task>
+    <task id="LOCAL-00005" summary="更新idea配置">
+      <option name="closed" value="true" />
+      <created>1739033359217</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1739033359217</updated>
+    </task>
+    <task id="LOCAL-00006" summary="修改主项目maven源码编译级别1.8修改为17">
+      <option name="closed" value="true" />
+      <created>1739033403759</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1739033403759</updated>
+    </task>
+    <task id="LOCAL-00007" summary="response重命名">
+      <option name="closed" value="true" />
+      <created>1739033439614</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1739033439615</updated>
+    </task>
+    <task id="LOCAL-00008" summary="工具类修改为静态方法">
+      <option name="closed" value="true" />
+      <created>1739033464112</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1739033464112</updated>
+    </task>
+    <task id="LOCAL-00009" summary="注入工具类">
+      <option name="closed" value="true" />
+      <created>1739033507613</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1739033507614</updated>
+    </task>
+    <task id="LOCAL-00010" summary="功能测试">
+      <option name="closed" value="true" />
+      <created>1739033539762</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1739033539762</updated>
+    </task>
+    <task id="LOCAL-00011" summary="查询全部股票的code">
+      <option name="closed" value="true" />
+      <created>1739033591534</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1739033591534</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +312,16 @@
     <MESSAGE value="init" />
     <MESSAGE value="项目初始化" />
     <MESSAGE value="正则处理数据部分代码解耦到单独的工具类中" />
-    <option name="LAST_COMMIT_MESSAGE" value="正则处理数据部分代码解耦到单独的工具类中" />
+    <MESSAGE value="更新gitignore文件" />
+    <MESSAGE value="更新stock_job配置" />
+    <MESSAGE value="更新idea配置" />
+    <MESSAGE value="修改主项目maven源码编译级别1.8修改为17" />
+    <MESSAGE value="response重命名" />
+    <MESSAGE value="工具类修改为静态方法" />
+    <MESSAGE value="注入工具类" />
+    <MESSAGE value="功能测试" />
+    <MESSAGE value="查询全部股票的code" />
+    <option name="LAST_COMMIT_MESSAGE" value="查询全部股票的code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
