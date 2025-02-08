@@ -1,39 +1,96 @@
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# IntelliJ IDEA specific
+/.idea/
+/*.iml
+/*.ipr
+/*.iws
+/*.idea/workspace.xml
+/*.idea/tasks.xml
+/*.idea/vcs.xml
+/*.idea/dictionaries
+/*.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/module-name.iml
+/.idea/sync.conf.json
+/.idea/dataSources/
+/.idea/dataSources.local/
+/.idea/sqlDataSources/
+/.idea/dynamic.xml
+/.idea/uiDesigner.xml
+/.idea/inspectionProfiles/
+/.idea/codestyles/
 
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-.idea/*.xml
-*.iws
-*.iml
-*.ipr
+# Maven
+/target/
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# Gradle
+/build/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+# JUnit
+/test-results/
+/test-reports/
 
-### VS Code ###
-.vscode/
+# Spring Boot
+/config\\.properties
+/logback\\.xml
+/application\\.yml
+/application\\.properties
+/byte-buddy/
+/jandex/
+/spring-boot/
+/spring-context/
 
-### Mac OS ###
+# OS generated files
 .DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Other common IDE files
+/outs/
+/cnv/
+/ai/
+/*.jar
+/*.war
+/*.ear
+/*.class
+
+# Generated test files
+/.coverage
+/coverage/
+
+#.logs
+*.log
+
+# Node.js
+/node_modules/
+/.npm/
+/npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# PyCharm
+/venv/
+/*/venv/
+/.Python
+.pytest_cache/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.dist-info/
+*.egg
+*.log
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+*.pyo
+*.pyd
+
+# Visual Studio Code
+.vscode/
