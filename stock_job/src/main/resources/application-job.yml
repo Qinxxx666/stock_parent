@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.1.131:3307/stock_db
+    url: jdbc:mysql://192.168.241.134:3307/stock_db
     username: root
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
@@ -15,7 +15,7 @@ spring:
       maxWait: 60000
 
   redis:
-    host: 192.168.1.130
+    host: 192.168.241.134
     port: 6379
     password: 123456
     database: 0 #Redis数据库索引（默认为0）
@@ -45,3 +45,5 @@ stock:
     - int_hangseng # 恒生
     - int_nikkei # 日经指数
     - b_FSSTI # 新加坡
+  marketUrl: http://hq.sinajs.cn/list=
+  blockUrl: http://vip.stock.finance.sina.com.cn/q/view/newSinaHy.php
