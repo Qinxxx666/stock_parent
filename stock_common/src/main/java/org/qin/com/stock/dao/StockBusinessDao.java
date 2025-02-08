@@ -79,5 +79,6 @@ public interface StockBusinessDao {
      */
     int deleteById(String stockCode);
 
+    List<String> getStockIds();
 }
 

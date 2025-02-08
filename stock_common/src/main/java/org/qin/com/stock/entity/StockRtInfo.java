@@ -1,6 +1,8 @@
 package org.qin.com.stock.entity;
 
 import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -12,6 +14,8 @@ import java.io.Serializable;
  * @author makejava
  * @since 2025-01-26 23:26:21
  */
+@Setter
+@Getter
 @Builder
 public class StockRtInfo implements Serializable {
     private static final long serialVersionUID = 403896015127065870L;
@@ -60,94 +64,6 @@ public class StockRtInfo implements Serializable {
      */
     private Date curTime;
 
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getStockCode() {
-        return stockCode;
-    }
-
-    public void setStockCode(String stockCode) {
-        this.stockCode = stockCode;
-    }
-
-    public String getStockName() {
-        return stockName;
-    }
-
-    public void setStockName(String stockName) {
-        this.stockName = stockName;
-    }
-
-    public BigDecimal getPreClosePrice() {
-        return preClosePrice;
-    }
-
-    public void setPreClosePrice(BigDecimal preClosePrice) {
-        this.preClosePrice = preClosePrice;
-    }
-
-    public BigDecimal getOpenPrice() {
-        return openPrice;
-    }
-
-    public void setOpenPrice(BigDecimal openPrice) {
-        this.openPrice = openPrice;
-    }
-
-    public BigDecimal getCurPrice() {
-        return curPrice;
-    }
-
-    public void setCurPrice(BigDecimal curPrice) {
-        this.curPrice = curPrice;
-    }
-
-    public BigDecimal getMinPrice() {
-        return minPrice;
-    }
-
-    public void setMinPrice(BigDecimal minPrice) {
-        this.minPrice = minPrice;
-    }
-
-    public BigDecimal getMaxPrice() {
-        return maxPrice;
-    }
-
-    public void setMaxPrice(BigDecimal maxPrice) {
-        this.maxPrice = maxPrice;
-    }
-
-    public Long getTradeAmount() {
-        return tradeAmount;
-    }
-
-    public void setTradeAmount(Long tradeAmount) {
-        this.tradeAmount = tradeAmount;
-    }
-
-    public BigDecimal getTradeVolume() {
-        return tradeVolume;
-    }
-
-    public void setTradeVolume(BigDecimal tradeVolume) {
-        this.tradeVolume = tradeVolume;
-    }
-
-    public Date getCurTime() {
-        return curTime;
-    }
-
-    public void setCurTime(Date curTime) {
-        this.curTime = curTime;
-    }
 
 }
 

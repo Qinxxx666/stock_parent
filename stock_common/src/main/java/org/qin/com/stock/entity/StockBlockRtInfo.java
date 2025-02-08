@@ -1,6 +1,8 @@
 package org.qin.com.stock.entity;
 
 import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
@@ -13,6 +15,10 @@ import java.io.Serializable;
  * @author makejava
  * @since 2025-01-26 23:26:21
  */
+//@Setter
+//@Getter
+@Setter
+@Getter
 @Builder
 public class StockBlockRtInfo implements Serializable {
     private static final long serialVersionUID = 439006071654687496L;
@@ -53,78 +59,6 @@ public class StockBlockRtInfo implements Serializable {
      */
     private Date curTime;
 
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getLabel() {
-        return label;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
-    }
-
-    public String getBlockName() {
-        return blockName;
-    }
-
-    public void setBlockName(String blockName) {
-        this.blockName = blockName;
-    }
-
-    public Integer getCompanyNum() {
-        return companyNum;
-    }
-
-    public void setCompanyNum(Integer companyNum) {
-        this.companyNum = companyNum;
-    }
-
-    public BigDecimal getAvgPrice() {
-        return avgPrice;
-    }
-
-    public void setAvgPrice(BigDecimal avgPrice) {
-        this.avgPrice = avgPrice;
-    }
-
-    public BigDecimal getUpdownRate() {
-        return updownRate;
-    }
-
-    public void setUpdownRate(BigDecimal updownRate) {
-        this.updownRate = updownRate;
-    }
-
-    public Long getTradeAmount() {
-        return tradeAmount;
-    }
-
-    public void setTradeAmount(Long tradeAmount) {
-        this.tradeAmount = tradeAmount;
-    }
-
-    public BigDecimal getTradeVolume() {
-        return tradeVolume;
-    }
-
-    public void setTradeVolume(BigDecimal tradeVolume) {
-        this.tradeVolume = tradeVolume;
-    }
-
-    public Date getCurTime() {
-        return curTime;
-    }
-
-    public void setCurTime(Date curTime) {
-        this.curTime = curTime;
-    }
 
 }
 

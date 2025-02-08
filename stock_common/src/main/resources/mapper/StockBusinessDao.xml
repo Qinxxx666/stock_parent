@@ -12,6 +12,11 @@
     </resultMap>
 
     <!--查询单个-->
+    <select id="getStockIds" resultType="string">
+        select stock_code from stock_business
+    </select>
+
+    <!--查询单个-->
     <select id="queryById" resultMap="StockBusinessMap">
         select
 stock_code, stock_name, block_label, block_name, business, update_time
