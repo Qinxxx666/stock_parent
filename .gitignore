@@ -47,6 +47,10 @@
 /stock_job/config.properties
 /stock_job/logback.xml
 
+/stock_front_admin/.idea/
+/stock_front_admin/node_modules/
+
+
 # 操作系统生成的文件
 .DS_Store
 Thumbs.db
