@@ -87,18 +87,6 @@ yarn-error.log
 *.egg-info/
 .dist-info/
 *.egg
-*.log
-*.pyc
-*.pyo
-*.pyd
-*.log
-*.pyc
-*.pyo
-*.pyd
-*.log
-*.pyc
-*.pyo
-*.pyd
 
 # Visual Studio Code
 .vscode/
