@@ -199,7 +199,7 @@ public class SinaApiTest {
     }
     @Test
     public void testsina00(){
-        stockTimerTaskService.getOuterMarketInfo();
+        stockTimerTaskService.getStockInfo();
     }
 
     /**

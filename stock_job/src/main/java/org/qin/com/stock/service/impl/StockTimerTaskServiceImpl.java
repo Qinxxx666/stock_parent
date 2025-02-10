@@ -3,10 +3,9 @@ package org.qin.com.stock.service.impl;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.qin.com.stock.config.StockInfoConfig;
-import org.qin.com.stock.dao.StockBlockRtInfoDao;
-import org.qin.com.stock.dao.StockBusinessDao;
-import org.qin.com.stock.dao.StockMarketIndexInfoDao;
-import org.qin.com.stock.dao.StockOuterMarketIndexInfoDao;
+import org.qin.com.stock.constant.ParseType;
+import org.qin.com.stock.dao.*;
+import org.qin.com.stock.entity.StockRtInfo;
 import org.qin.com.stock.service.StockTimerTaskService;
 import org.qin.com.stock.utils.IdWorker;
 import org.qin.com.stock.utils.ParserStockInfoUtil;
@@ -55,6 +54,9 @@ public class StockTimerTaskServiceImpl implements StockTimerTaskService {
 
     @Autowired
     private StockBusinessDao stockBusinessDao;
+
+    @Autowired
+    private StockRtInfoDao stockRtInfoDao;
 
     @Override
     public void getInnerMarketInfo() {
@@ -171,14 +173,25 @@ public class StockTimerTaskServiceImpl implements StockTimerTaskService {
     public void getStockInfo() {
         //批量获取股票ID集合
         List<String> stockIds = stockBusinessDao.getStockIds();
-        //计算出符合sina命名规范的股票id数据
+        //计算出符合sina命名规范的股票id数据（jdk17之前用下列注释中得写法
         stockIds = stockIds.stream().map(id -> id.startsWith("6") ? "sh" + id : "sz" + id).toList();
 //        stockIds = stockIds.stream().map(id -> {
 //            return id.startsWith("6") ? "sh" + id : "sz" + id;
 //        }).collect(Collectors.toList());
         log.info(stockIds.toString());
-        Lists.partition(stockIds,15).forEach(ids->{
+        Lists.partition(stockIds,20).forEach(ids->{
             System.out.println(ids);
+            //拼接股票url地址
+            String stockUrl=stockInfoConfig.getMarketUrl()+String.join(",",ids);
+            //获取响应数据
+            String result = restTemplate.getForObject(stockUrl, String.class);
+            List<StockRtInfo> infos = parserStockInfoUtil.parser4StockOrMarketInfo(result, ParseType.ASHARE);
+            log.info("数据量：{}",infos.size());
+            //批量插入数据库
+//            if (!CollectionUtils.isEmpty(infos)) {
+//                int count = stockRtInfoDao.insertBatch(infos);
+//                log.info(String.valueOf(count));
+//            }
         });
     }
 
